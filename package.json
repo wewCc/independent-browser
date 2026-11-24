@@ -1,0 +1,12 @@
+{
+  "name": "codex-independent-browser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Windows headed browser for Codex Desktop",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@playwright/mcp": "0.0.86"
+  }
+}

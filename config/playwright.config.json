@@ -1,0 +1,37 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "channel": "chrome",
+      "headless": false,
+      "chromiumSandbox": true
+    },
+    "contextOptions": {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "acceptDownloads": true
+    }
+  },
+  "timeouts": {
+    "action": 6000,
+    "navigation": 45000
+  },
+  "outputMaxSize": 67108864,
+  "redactUrlParams": [
+    "access_token",
+    "refresh_token",
+    "id_token",
+    "token",
+    "code",
+    "api_key",
+    "state",
+    "code_challenge",
+    "code_verifier",
+    "nonce",
+    "continue",
+    "dsh",
+    "rart"
+  ]
+}

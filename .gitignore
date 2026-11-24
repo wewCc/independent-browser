@@ -1,0 +1,16 @@
+node_modules/
+runtime/
+backups/
+logs/
+reports/
+config/*.local.*
+.env*
+*.pem
+*.key
+*storageState*.json
+*storage-state*.json
+*cookies*.json
+*token*.json
+*secret*.json
+*.log
+

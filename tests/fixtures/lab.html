@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Independent Browser Lab</title>
+<style>body{font:18px system-ui;background:#f4f9ff;color:#123}label,button,select,a{display:block;margin:10px}footer{margin-top:150vh}</style>
+<h1>Independent Browser Lab</h1><button id="increment">Increment</button><output id="count">0</output>
+<form id="form"><label>Message <input id="message"></label><label>Choice <select id="choice"><option>Alpha</option><option>Beta</option></select></label>
+<label><input id="check" type="checkbox">Enabled</label><label><input id="radio" name="group" type="radio">Local</label><button>Save locally</button></form>
+<p id="result">Ready</p><button id="load">Fetch status</button><p id="dynamic"></p>
+<label>Test upload <input type="file" id="upload"></label><output id="uploaded"></output>
+<a id="download" href="/download" download="fixture-result.txt">Download result</a>
+<a id="newtab" href="/second" target="_blank">Second tab</a><a id="next" href="/second">Next page</a>
+<iframe title="Child" srcdoc="<button onclick=&quot;this.textContent='Child done'&quot;>Child action</button>"></iframe>
+<footer id="end">End of fixture</footer>
+<script>
+increment.onclick=()=>count.textContent=Number(count.textContent)+1;
+form.onsubmit=e=>{e.preventDefault();result.textContent='Saved '+message.value};
+load.onclick=()=>{dynamic.textContent='Loading';setTimeout(async()=>{dynamic.textContent=await (await fetch('/status')).text()},350)};
+upload.onchange=async()=>uploaded.textContent=await upload.files[0].text();
+</script></html>
+
